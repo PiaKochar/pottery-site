@@ -1,0 +1,1 @@
+// has code for adding and removing pictures, as well as adding and removing tags from pictures
