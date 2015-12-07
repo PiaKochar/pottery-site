@@ -1,26 +1,27 @@
 {
-	"name": "pottery-website",
-	"version": "1.0.0",
-	"description": "Personal Pottery Portfolio",
-	"main": "app.js",
-	"license": "ISC",
-	"repository": 
-		{ "type": "git"
-		, "url": "https://github.com/PiaKochar/pottery-site.git"
-		},
-	"scripts": {
-		"start": "node ./bin/run-server",
-		"test": "grunt"
-	},
-	"author": "Pia Kochar",
-	"dependencies": {
-		"ejs": "^2.3.4",
-		"express": "^4.13.3",
-		"mongoose": "^4.1.11",
-		"lodash": "^3.10.1"
-	},
-	"devDependencies": {
-		"express-session": "^1.11.3",
-		"grunt": "^0.4.5"
-	}
+  "name": "pottery-website",
+  "version": "1.0.0",
+  "description": "Personal Pottery Portfolio",
+  "main": "app.js",
+  "license": "ISC",
+  "repository": 
+    { "type": "git"
+    , "url": "https://github.com/PiaKochar/pottery-site.git"
+    },
+  "scripts": {
+    "start": "node ./bin/run-server",
+    "test": "grunt"
+  },
+  "author": "Pia Kochar",
+  "dependencies": {
+    "jquery": "2.1.0",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "mongoose": "^4.1.11",
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {
+    "express-session": "^1.11.3",
+    "grunt": "^0.4.5"
+  }
 }

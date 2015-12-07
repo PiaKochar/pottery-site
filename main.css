@@ -54,13 +54,10 @@ hr {
  * ---------------------------------------------------------------------------
  */
 
-#pottery-pics {
+#picture-grid {
   display: block;
 }
 
-/*
- * Shared between palette and map.
- */
 .swatch {
   width: 25px;
   height: 25px;
