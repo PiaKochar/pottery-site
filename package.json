@@ -18,10 +18,17 @@
     "ejs": "^2.3.4",
     "express": "^4.13.3",
     "mongoose": "^4.1.11",
-    "lodash": "^3.10.1"
+    "lodash": "^3.10.1",
+    "node-uuid": "^1.4.3",
+    "seeder": "^0.2.1"
   },
   "devDependencies": {
     "express-session": "^1.11.3",
-    "grunt": "^0.4.5"
+    "grunt": "^0.4.5",
+    "chai": "^3.2.0",
+    "node-mocks-http": "^1.4.4",
+    "proxyquire": "^1.7.1",
+    "sinon": "^1.16.1",
+    "supertest": "^1.1.0"
   }
 }

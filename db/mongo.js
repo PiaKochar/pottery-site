@@ -1,5 +1,5 @@
-var mongoose = require(['mongoose'], function () {
-  mongoose.connect('mongodb://localhost/piaspottery', function (err) {
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/piaspottery', function (err) {
   if (err && err.message == 'connect ECONNREFUSED') {
     console.log('Error connecting to mongodb database: %s.\n', err.message);
     process.exit(0);
@@ -29,4 +29,3 @@ module.exports = {
   mongoose: mongoose,
   db: db.collection('Picture')
 }
-});

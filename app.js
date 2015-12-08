@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 
+
 // Serve static pages
 app.engine('html', require('ejs').__express);
 app.set('view engine', 'html');

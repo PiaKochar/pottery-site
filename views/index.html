@@ -5,13 +5,22 @@
     <meta http-equiv="X-UA-compatible" content="IE-edge">
     <title>Pia's Pottery</title>
 
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <!-- <script data-main="scripts/require-config" src="scripts/require.js"></script> -->
   </head>
-    hello
   <body>
-
+    <div id="search">
+      <input type="text" id="tag" size="40" placeholder="Enter a tag to filter by!"/>
+      <button id="filter">Filter</button>
+      <button id="unfilter">Clear Filters</button>
+    </div>
+  	<div id="picture-grid">
+      <h3>Pictures</h3>
+  	</div>
+    <button id="add-pic">Add Picture</button>
   	<!-- load scripts -->
-    <script src="lib/js/jquery-1.11.1.js"></script>
-    <script src="main.js"></script>
+    <script src="/js/jquery-1.11.1.js"></script>
+    <script src="/js/picture-grid.js"></script>
+    <script src="/js/indexPage.js"></script>
   </body>
 </html>
