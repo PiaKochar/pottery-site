@@ -1,30 +1,46 @@
-// var pictureDb = require('db/picture');
-// var tagsDb = require('db/tag');
-
 // Default number of pictures per row
 var DEFAULT_ROW = 5;
 
 // Store current state here
 var grid;
 
-var PictureGrid = function ($container) {
+var PictureGrid = function ($container, numPots) {
   grid = this;
   this.$elem = $container;
   this.row = DEFAULT_ROW;
+  this.numPots = numPots;
+  this.selected = [];
 };
+
+var setSelected = function () {
+  var selectedIds = "";
+  if (grid.selected.length > 0) {
+    selectedIds = selectedIds + grid.selected[0];
+    for (var i = 1; i < grid.selected.length; i++) {
+      selectedIds = selectedIds + " " + grid.selected[i];
+    }
+  }
+  $('#selectedIds').val(selectedIds);
+}
 
 // Toggle whether a photo is selected or not
 var toggleSelected = function (e) {
   var $this = $(this);
   if ($this.hasClass('selected')) {
     $this.removeClass('selected');
+    $this.attr('style', 'border:5px solid white');
+    var index = grid.selected.indexOf($this.attr('id'));
+    grid.selected.splice(index, 1);
+    setSelected();
   } else {
     $this.addClass('selected');
+    $this.attr('style', 'border:5px solid black');
+    grid.selected.push($this.attr('id'));
+    setSelected();
   }
 }
  
-// Gets the stored pictures from MongoDb and preps them to be rendered
-var appendPic = function (src, id, tag) {
+var appendPic = function (src, id, visible) {
   var $pic = $('<img>');
   $pic.addClass('pot');
   $pic.attr('id', id);
@@ -32,36 +48,29 @@ var appendPic = function (src, id, tag) {
   $pic.attr('height', 100);
   $pic.attr('width', 100);
   $pic.attr('display', 'block');
-  $pic.addClass(tag);
+  $pic.attr('style', 'border:5px solid white');
+  // $pic.addClass(tag);
   $pic.click(toggleSelected);
   grid.$elem.append($pic);
 }
 
 PictureGrid.prototype.populateGrid = function () {
-  appendPic('/img/pot1.jpg', 1, 'flower');
-  appendPic('/img/pot2.jpg', 2, 'cup');
+  for (var i = 1; i <= this.numPots; i++) {
+    var filePath = '/img/pot' + i + '.jpg';
+    appendPic(filePath, i, true);
+  }
+  $('#1').addClass('flower');
+  $('#9').addClass('flower');
+  $('#28').addClass('flower');
+  $('#54').addClass('totoro');
 }
 
-// populate with images from mongodb
-
-// add picture
-PictureGrid.prototype.addPicture = function () {
-
-}
-
-// remove picture
-PictureGrid.prototype.removePicture = function () {
-
-}
-
-// add tag
-PictureGrid.prototype.addTag = function () {
-
-}
-
-// remove tag
-PictureGrid.prototype.removeTag = function () {
-
+PictureGrid.prototype.filterGrid = function (ids) {
+  for (var i = 1; i <= this.numPots; i++) {
+    var filePath = '/img/pot' + i + '.jpg';
+    var visible = ids.indexOf(i) != -1;
+    appendPic(filePath, i, visible);
+  }
 }
 
 PictureGrid.prototype.filterTag = function (tag) {
@@ -86,5 +95,4 @@ PictureGrid.prototype.filterTag = function (tag) {
 PictureGrid.prototype.removeFilters = function () {
   $('.pot').show();
 }
-// change number of pictures per row
 

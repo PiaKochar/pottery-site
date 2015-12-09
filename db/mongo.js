@@ -18,7 +18,7 @@ var pictureSchema = new mongoose.Schema({
 
 var tagSchema = new mongoose.Schema({
   tag: String,
-  ids: [Number]
+  ids: [String]
 });
 
 var Picture = mongoose.model('Picture', pictureSchema);
@@ -26,6 +26,7 @@ var Tag = mongoose.model('Tag', tagSchema);
 
 module.exports = {
   Picture: Picture,
+  Tag: Tag,
   mongoose: mongoose,
   db: db.collection('Picture')
 }

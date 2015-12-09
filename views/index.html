@@ -6,19 +6,37 @@
     <title>Pia's Pottery</title>
 
     <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <!-- <script data-main="scripts/require-config" src="scripts/require.js"></script> -->
   </head>
   <body>
     <div id="search">
+      <!-- <p><a id="filterRef" href="/filtered">Filter Pots</a></p> -->
+      <!-- <form method="post">
+          <input id="tag" type="text" name="filter" placeholder="Enter a tag to filter by!" size="40"></p>
+          <button><a href="/filtered" name="filterButton">Filter</a></button>
+          <p><input type="submit" name="filterButton" value="Filter"></p>
+      </form> -->
       <input type="text" id="tag" size="40" placeholder="Enter a tag to filter by!"/>
       <button id="filter">Filter</button>
-      <button id="unfilter">Clear Filters</button>
+      <p><a id="unfilter" href="/">Clear Filters</a></p>
+    </div>
+    <div id="tags">
+<!--       <input type="text" id="tag" size="40" placeholder="Enter a tag to filter by!"/>
+      <button id="filter">Filter</button> -->
+<!--         <input type="text" size="40" name="tagNames" placeholder="Add tag to selected pots!"></p>
+         -->
+        <p><a href="/add">Add Tags</a></p>
+        <form method="post">
+          <input type="text" id="selectedIds" name="ids" value="" placeholder="Select pictures to get ids to tag" size="40"></p>
+          <input type="text" name="tagName" placeholder="Enter a tag here" size="40"></p>
+          <p><input type="submit"></p>
+        </form>
     </div>
   	<div id="picture-grid">
-      <h3>Pictures</h3>
   	</div>
-    <button id="add-pic">Add Picture</button>
+    <!-- <p><a href="/upload">Upload Picture</a></p> -->
+    <!-- <button id="add-pic">Upload Picture</button> -->
   	<!-- load scripts -->
+    <!-- <script type="text/javascript"></script> -->
     <script src="/js/jquery-1.11.1.js"></script>
     <script src="/js/picture-grid.js"></script>
     <script src="/js/indexPage.js"></script>
